@@ -1,0 +1,62 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Agendamento</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Agendamento</h1>
+    </header>
+
+    <main>
+        <form id="generate-id-form">
+            <h2>Criar Agendamento</h2>
+            <label for="client-name">Nome do Cliente:</label>
+            <input type="text" id="client-name" placeholder="Digite o nome do cliente" required>
+
+            <h3>Selecione o Dia</h3>
+            <div class="day-selector">
+                <button type="button" class="day-button" data-day="segunda">Segunda</button>
+                <button type="button" class="day-button" data-day="terça">Terça</button>
+                <button type="button" class="day-button" data-day="quarta">Quarta</button>
+                <button type="button" class="day-button" data-day="quinta">Quinta</button>
+                <button type="button" class="day-button" data-day="sexta">Sexta</button>
+                <button type="button" class="day-button" data-day="sábado">Sábado</button>
+            </div>
+
+            <label for="appointment-time">Horário:</label>
+            <select id="appointment-time" required>
+                <option value="" disabled selected>Selecione um horário</option>
+            </select>
+
+            <button type="submit">Criar Agendamento</button>
+        </form>
+
+        <section id="generated-info-section" style="display: none;">
+            <h2>Agendamento Criado</h2>
+            <p><strong>Nome do Cliente:</strong> <span id="generated-name"></span></p>
+            <p><strong>ID do Agendamento:</strong> <span id="generated-id"></span></p>
+            <p><strong>Link de Confirmação:</strong> <a id="generated-link" href="#" target="_blank"></a></p>
+            <button id="copy-id">Copiar ID</button>
+        </section>
+
+        <section id="appointments-list">
+            <h2>Agendamentos Ativos</h2>
+            <ul id="appointments"></ul>
+        </section>
+
+        <button id="view-appointments">Ver Todos os Agendamentos</button>
+        <button id="clear-appointments">Excluir Todos os Agendamentos</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sistema de Agendamento / Tec4Avalon</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
